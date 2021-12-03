@@ -12,3 +12,18 @@
   (let [number-range (range 100000 166666)]
     (->> (filter wonderland-number? number-range)
          (first))))
+
+
+; -----------------------
+; Living Clojure p.227
+; 각 자릿수의 세제곱의 합이 1000 미만인 수
+
+(defn another-land-number? [x]
+  (let [digits (map #(Character/digit % 10) (str x))
+        sum-of-cubics (apply + (map #(* % % %) digits))]
+    (< sum-of-cubics 1000)))
+
+
+(defn another-land-numbers []
+  (let [number-range (range 100000 999999)]
+    (->> (filter another-land-number? number-range))))
