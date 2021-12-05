@@ -1,6 +1,5 @@
-(ns fox-goose-bag-of-corn.puzzle)
-
-(def start-pos [[[:fox :goose :corn :you] [:boat] []]])
+(ns fox-goose-bag-of-corn.puzzle
+  (:require [clojure.core.logic :refer :all]))
 
 (defn river-crossing-plan []
   [[[:fox :goose :corn :you] [:boat] []]
@@ -20,4 +19,5 @@
    [[] [:boat] [:fox :goose :corn :you]]])
 
 
-
+(run* [q]
+      (== q true))
